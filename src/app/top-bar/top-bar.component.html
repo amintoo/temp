@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <span id='title'></span>
+
+  <form (ngSubmit)='search(searchForm)' #searchForm='ngForm'>
+
+
+      <input placeholder="Search Location" [(ngModel)]='loc' #lo='ngModel' name='lo' required type='text'
+             autocomplete="off">
+
+      <mat-error *ngIf="lo.invalid && (lo.dirty || lo.touched)">
+        <span *ngIf='lo.errors.required'>
+          Location is required.
+        </span>
+      </mat-error>
+
+   <!-- <button mat-button type='submit' nzType="primary">Search</button> -->
+    <button nz-button nzType="primary" nzSize="large" nzSearch>Search</button>
+
+
+  </form>
+
+</mat-toolbar>
